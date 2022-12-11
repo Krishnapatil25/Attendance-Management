@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width:300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: cornflowerblue;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+    <title>Registration</title>
+</head>
+<body>
+<div class="jumbotron">
+<br>
+  <br>
+<div class="container bg-light text-center">
+    <p> {{ msg }}</p>
+  <h2>Register</h2>
+  <br>
+  <ul class="nav nav-pills nav-justified">
+    <li class="nav-item">
+      <a class="nav-link" href="/registration_staff">Staff</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link active" href="/registration_student">Student</a>
+    </li>
+      </ul>
+  <br>
+  <br>
+  <form method="POST">
+    <br>
+    <div class="row ">
+      <div class="col-sm-6 text-right">
+
+    <label for="name"><b>Name:</b></label>
+
+          </div>
+        <div class="col-sm-6 text-left"><input type="text" id="name" name="name" pattern="[A-Za-z]{1,10}" required></div>
+      </div>
+    <br>
+    <div class="row ">
+
+        <div class="col-sm-6 text-right">
+    <label for="usn"><b>USN:</b></label>
+
+          </div>
+        <div class="col-sm-6 text-left"><input type="text" id="usn" name="usn" value="{{usn}}"></div>
+      </div>
+    <br>
+    <div class="row ">
+
+        <div class="col-sm-6 text-right">
+    <label for="branch"><b>Branch:</b></label>
+
+          </div>
+        <div class="col-sm-6 text-left"><input type="text" id="branch" name="branch" value="{{branch}}"></div>
+      </div>
+    <br>
+
+ <div class="row ">
+
+        <div class="col-sm-6 text-right">
+    <label for="clg"><b>College Name:</b></label>
+
+          </div>
+        <div class="col-sm-6 text-left"><input type="text" id="clg" name="clg" value="{{clg}}"></div>
+      </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6 text-right"> <label for="stu_adr"><b>Student Address:</b></label></div>
+        <div class="col-sm-6 text-left">
+
+    <textarea id="stu_adr"  name="stu_adr"> {{ stu_adr }} </textarea>
+          </div>
+
+      </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6 text-right">
+        <label><b>Photo:</b></label>
+      </div>
+      <div class="col-sm-6 text-left">
+        <button type="submit" formaction="/capture">Capture Image </button>
+          <img src="{{ img }}" width="40" height="40">
+      </div>
+    </div>
+    <br>
+    <div class="row">
+      <div class="col-sm-6 text-right">
+        <label><b>Voice Input:</b></label>
+      </div>
+      <div class="col-sm-6 text-left">
+        <button type="submit" formaction="/record">Record <i class="fa fa-microphone" style="font-size:24px;color:red"></i></button>
+      <p>{{ MyText }}</p>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+
+        <div class="col-sm-6 text-right">
+    <label for="mail"><b>Email ID:</b></label>
+
+
+          </div>
+        <div class="col-sm-6 text-left"><input type="email" id="mail" name="mail" value="{{mail}}"></div>
+      </div>
+    <br>
+    <div class="row ">
+
+      <div class="col-sm-6 text-right">
+    <label for="psw"><b>Password:</b></label>
+
+    </div>
+      <div class="col-sm-6 text-left">
+          <input type="text" id="psw" name="psw" value="{{psw}}"></div>
+        <br>
+    </div>
+    <br>
+    <button type="submit" formaction="/signup_student">Register</button>
+
+    <br>
+  </form>
+  <p>Click Here For <a href="/">Login</a> </p>
+</div>
+  <br>
+  <br>
+  </div>
+</body>
+</html>

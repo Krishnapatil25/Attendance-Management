@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  height: 100%;
+  width:300px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: cornflowerblue;
+  overflow-x: hidden;
+  padding-top: 20px;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: white;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: black;
+}
+
+.main {
+  margin-left: 300px; /* Same as the width of the sidenav */
+  font-size: 20px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+</style>
+    <title>Staff</title>
+</head>
+<body>
+<div class="jumbotron">
+<br>
+  <br>
+<div class="container bg-light text-center">
+  <h2>Staff Login</h2>
+  <br>
+  <ul class="nav nav-pills nav-justified">
+    <li class="nav-item">
+      <a class="nav-link active" href="/">Staff</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="/login1">Student</a>
+    </li>
+      </ul>
+  <br>
+  <br>
+  <form action="/staff_login" method="POST">
+    <div class="row text-right">
+      <div class="col-sm-4"></div>
+        <div class="col-sm-4">
+    <label for="user"><b>User ID:</b></label>
+    <input type="text" id="user" name="user">
+          </div>
+        <div class="col-sm-4"></div>
+      </div>
+    <br>
+    <br>
+    <div class="row text-right">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+    <label for="psw"><b>Password:</b></label>
+    <input type="password" id="psw" name="psw">
+    </div>
+      <div class="col-sm-4"></div>
+        <br>
+    </div>
+    <br>
+    <button><a href="/staff_recognise"> Cam<i class="fa fa-eye" style="font-size:24px;"> </i></a> </button>
+    <input type="submit" value="Login">
+
+    <br>
+  </form>
+  <p>Click Here For <a href="/registration_student">Sign Up</a> </p>
+  <p>admin<a href="/admin">Login</a> </p>
+</div>
+  <br>
+  <br>
+  </div>
+</body>
+</html>
