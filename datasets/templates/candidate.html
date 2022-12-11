@@ -1,0 +1,50 @@
+<!DOCKTYPE html>
+<html>
+<body>
+<title>admin</title>
+</body>
+
+
+<div class="jumbotron text-center">
+        <h1>Staff List</h1>
+    </div>
+<div class="card">
+    <div class="card-body">
+<table class="table" border="3">
+        <thead class="thead-cornflowerblue">
+        <td>ID</td>
+        <td>Name</td>
+        <td>Subject</td>
+        <td>Branch</td>
+        <td>Email</td>
+
+        <td>Password</td>
+        <td>Status</td>
+        <td colspan="2">Action</td>
+
+    </thead>
+
+    <tr>
+        {% for row in rows %}
+        <td>{{ row[0] }}</td>
+        <td>{{ row[1] }}</td>
+        <td>{{ row[2] }}</td>
+        <td>{{ row[3] }}</td>
+        <td> {{ row[4] }}</td>
+        <td> {{ row[5] }} </td>
+        <td>{{ row[6] }}</td>
+         <form action="/up_staf/{{row[4]}}" method="POST">
+        <td><input list="en" name="en">
+  <datalist id="en">
+    <option value="accept">
+      <option value="Deny"></datalist></td>
+              <td>      <input type="submit" value="Update"> </td>
+        </form>
+
+    </tr>
+    {% endfor %}
+</table>
+
+    </div>
+  </div>
+  </div>
